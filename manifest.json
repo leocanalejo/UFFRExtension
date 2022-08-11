@@ -1,0 +1,30 @@
+{
+  "name": "UFFR Extension",
+  "short_name": "UFFR",
+  "version": "1.0.8",
+  "description": "UFFR Extension",
+  "permissions": [
+    "<all_urls>",
+    "clipboardWrite",
+    "http://*/",
+    "https://*/",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "uffr-icon.png"
+  },
+  "icons": { "16": "uffr-icon.png",
+             "128": "uffr-icon.png" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["load.js"],
+      "run_at":  "document_end"
+    }
+  ],
+  "background": { "scripts" : ["config.js", "bg.js"]},
+  "minimum_chrome_version": "26"
+}
+
